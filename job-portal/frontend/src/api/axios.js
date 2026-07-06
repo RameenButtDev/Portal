@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// Environment variable se baseURL lo
-const baseURL = import.meta.env?.VITE_API_URL || process.env.REACT_APP_API_URL || "/api";
+// ✅ Production mein Render URL, local mein proxy
+const baseURL = import.meta.env.VITE_API_URL || "/api";
 
 const api = axios.create({ baseURL });
 
