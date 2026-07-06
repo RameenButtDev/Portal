@@ -26,7 +26,7 @@ export default function Navbar() {
             {userInfo ? (
               <div className="relative">
                 <button onClick={() => setProfileOpen(!profileOpen)} className="flex items-center gap-2 text-ink hover:text-primary-700 text-sm font-medium">
-                  {userInfo.name.split(" ")[0]}
+                  {userInfo.name?.split(" ")[0] || "User"}
                   <span className="text-[10px] bg-primary-100 text-primary-700 px-2 py-0.5 rounded-full capitalize">{userInfo.role}</span>
                 </button>
                 {profileOpen && (
