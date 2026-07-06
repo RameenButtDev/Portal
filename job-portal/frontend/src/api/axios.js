@@ -1,6 +1,9 @@
 import axios from "axios";
 
-const api = axios.create({ baseURL: "/api" });
+// Environment variable se baseURL lo
+const baseURL = import.meta.env?.VITE_API_URL || process.env.REACT_APP_API_URL || "/api";
+
+const api = axios.create({ baseURL });
 
 api.interceptors.request.use((config) => {
   const userInfo = localStorage.getItem("userInfo");
